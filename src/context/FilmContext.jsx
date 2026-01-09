@@ -1,14 +1,17 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { MovieService } from "../services/movie";
 
+const movieService = new MovieService();
+
 const FilmsContext = createContext();
 
-export const FilmProvider = ({ children }) => {
+export const FilmsProvider = ({ children }) => {
+
 
   const [films, setFilms] = useState([])
 
   useEffect(() => {
-    MovieService.getAllMovies().then(setFilms);
+    movieService.getAllMovies().then(setFilms);
   }, [])
 
   const getAllMovies = async () => {
@@ -16,21 +19,22 @@ export const FilmProvider = ({ children }) => {
   }
 
   const getMoviesById = (id) => {
-    return MovieService.getMovieById(id)
+    return movieService.getMovieById(id);
   }
 
   const createMovie = async (movieDate) => {
-    const addMovie = await MovieService.createMovie(movieDate)
-    setFilms(films => [...films, addMovie])
+    const addMovie = await movieService.createMovie(movieDate);
+    setFilms(films => [...films, addMovie]);
   }
 
   const updateMovie = async (id, movieData) => {
-    const updatedMovie = await MovieService.updateMovie(id, movieData)
+    const updatedMovie = await movieService.updateMovie(id, movieData);
     setFilms(films => films.map(film => film.id === id ? updatedMovie : film))
   }
 
   const deleteMovie = async (id) => {
-    setFilms(films => films.filter(films.id !== id))
+    await movieService.deleteMovie(id);
+    setFilms(films => films.filter(film => film.id !== id))
   }
 
   const value = {

@@ -2,10 +2,12 @@ import { createContext, useContext, useEffect, useState } from "react";
 import { AuthService } from "../services/auth";
 
 const AuthContext = createContext();
+const authService = new AuthService();
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+
 
 
   useEffect(() => {
@@ -17,20 +19,20 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   const login = async (email, password) => {
-    const user = await AuthService.login(email, password)
+    const user = await authService.login(email, password)
     setUser(user);
     setIsAuthenticated(true);
     return user;
   }
 
   const logout = () => {
-    AuthService.logout();
+    authService.logout();
     setUser(null);
     setIsAuthenticated(false);
   }
 
   const register = async (nickname, email, password) => {
-    const newRegistar =  await AuthService.register(nickname, email, password)
+    const newRegistar =  await authService.register(nickname, email, password)
     setUser(newRegistar)
     setIsAuthenticated(true)
   }
