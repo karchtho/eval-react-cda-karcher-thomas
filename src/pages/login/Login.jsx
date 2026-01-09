@@ -1,10 +1,10 @@
-import classes from './Login.module.css';
+import LoginForm from '../../components/forms/login-form/LoginForm';
 
 function Login() {
   return (
-    <div className={classes.container}>
-      <h2>Login</h2>
-    </div>
+    <>
+      <LoginForm />
+    </>
   );
 }
 

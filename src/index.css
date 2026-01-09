@@ -63,13 +63,13 @@ main {
 }
 
 /* Footer */
-footer {
+/* footer {
   background-color: #34495e;
   color: white;
   text-align: center;
   padding: 1rem;
   margin-top: auto;
-}
+} */
 
 /* Forms */
 .auth-form,
@@ -79,10 +79,10 @@ footer {
   padding: 2rem;
   background-color: #f8f9fa;
   border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.form-group {
+/* .form-group {
   margin-bottom: 1rem;
 }
 
@@ -119,7 +119,7 @@ button {
 
 button:hover {
   background-color: #ec7063;
-}
+} */
 
 /* Utility Classes */
 .hidden {
@@ -184,27 +184,27 @@ button:hover {
 } */
 
 /* Styles pour le template Movies */
-.movies-page {
+/* .movies-page {
   max-width: 1200px;
   margin: 2rem auto;
   padding: 1rem;
-}
+} */
 
-.movies-page h1 {
+/* .movies-page h1 {
   text-align: center;
   font-size: 2rem;
   margin-bottom: 1.5rem;
   color: #34495e;
-}
+} */
 
-.movies-grid {
+/* .movies-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 2rem;
   padding: 1rem 0;
-}
+} */
 
-.movie-card {
+/* .movie-card {
   background-color: #fff;
   border-radius: 8px;
   overflow: hidden;
@@ -237,10 +237,10 @@ button:hover {
 .movie-card-content p {
   font-size: 0.9rem;
   color: #666;
-}
+} */
 
 /* Styles pour le template Movie Details */
-.movie-details {
+/* .movie-details {
   max-width: 800px;
   margin: 2rem auto;
   background-color: #fff;
@@ -306,7 +306,7 @@ button:hover {
 
 .movie-info .description {
   color: #666;
-}
+} */
 
 /* Styles spécifiques pour le template "add-movie-template" */
 .movie-form {
@@ -361,7 +361,7 @@ button:hover {
 }
 
 /* Styles spécifiques pour les templates "login-template" et "register-template" */
-.auth-form {
+/* .auth-form {
   max-width: 400px;
   margin: 2rem auto;
   padding: 2rem;
@@ -409,5 +409,4 @@ button:hover {
 
 .auth-form button:hover {
   background-color: #ec7063;
-}
-
+} */

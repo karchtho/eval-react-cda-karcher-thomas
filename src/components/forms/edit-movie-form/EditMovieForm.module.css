@@ -13,7 +13,7 @@
   color: #34495e;
 }
 
-/* .movie-form .form-group {
+.movie-form .form-group {
   margin-bottom: 1rem;
 }
 
@@ -31,9 +31,9 @@
   border: 1px solid #ddd;
   border-radius: 4px;
   font-size: 1rem;
-} */
+}
 
-.movie-form button {
+.button {
   width: 100%;
   background-color: #e74c3c;
   color: #fff;
@@ -45,6 +45,6 @@
   transition: background-color 0.3s;
 }
 
-.movie-form button:hover {
+.button:hover {
   background-color: #ec7063;
 }

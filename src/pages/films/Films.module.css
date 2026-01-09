@@ -1,3 +1,12 @@
-.container {
-  /* Styles pour Films */
+.movies-page {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+.titre {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #34495e;
 }

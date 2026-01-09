@@ -1,26 +1,21 @@
+
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useFilms } from '../../../context/FilmContext';
-import FormGroup from "../form-group/FormGroup";
-import classes from './AddMovieForm.module.css';
+import FormGroup from "../../forms/form-group/FormGroup";
+import classes from './EditMovieForm.module.css';
 
-function AddMovieForm() {
-  const [title, setTitle] = useState('');
-  const [description, setDescription] = useState('');
-  const [releaseDate, setReleaseDate] = useState('');
-  const [imageUrl, setImageUrl] = useState('');
+function EditMovieForm({ movie, onSubmit }) {
+  const [title, setTitle] = useState(movie.title);
+  const [description, setDescription] = useState(movie.description);
+  const [releaseDate, setReleaseDate] = useState(movie.releaseDate);
+  const [imageUrl, setImageUrl] = useState(movie.imageUrl);
   const [error, setError] = useState('');
-
-  const { createMovie } = useFilms();
-  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
 
     try {
-      await createMovie({ title, description, releaseDate, imageUrl });
-      navigate('/films');
+      await onSubmit({ title, description, releaseDate, imageUrl });
     } catch (err) {
       setError(err.message);
     }
@@ -28,7 +23,7 @@ function AddMovieForm() {
 
   return (
     <div className={classes["movie-form"]}>
-      <h1>Ajouter un film</h1>
+      <h1>Edit movie</h1>
       <form onSubmit={handleSubmit}>
 
         {error && <p className={classes.error}>{error}</p>}
@@ -44,7 +39,7 @@ function AddMovieForm() {
 
         <FormGroup
           label="Description"
-          type="textarea"  // Special: textarea
+          type="textarea"
           id="description"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
@@ -69,11 +64,13 @@ function AddMovieForm() {
           required
         />
 
-        <button type="submit">Ajouter</button>
+        <div className={classes.button}>
+          <button type="submit">Upadte movie</button>
+        </div>
 
       </form>
     </div>
   );
 }
 
-export default AddMovieForm;
+export default EditMovieForm;

@@ -1,10 +1,10 @@
-import classes from './Register.module.css';
+import RegisterForm from '../../components/forms/register-form/RegisterForm';
 
 function Register() {
   return (
-    <div className={classes.container}>
-      <h2>Register</h2>
-    </div>
+    <>
+      <RegisterForm />
+    </>
   );
 }
 

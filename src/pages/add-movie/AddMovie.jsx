@@ -1,10 +1,12 @@
-import classes from './AddMovie.module.css';
+// import classes from './AddMovie.module.css';
+
+import AddMovieForm from "../../components/forms/add-movie-form/AddMovieForm";
 
 function AddMovie() {
   return (
-    <div className={classes.container}>
-      <h2>AddMovie</h2>
-    </div>
+    <>
+      <AddMovieForm />
+    </>
   );
 }
 

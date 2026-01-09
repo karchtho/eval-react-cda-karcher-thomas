@@ -34,25 +34,25 @@ function Navbar() {
           </li>
           {isAuthenticated ? (
             <>
-              <li className={classes["auth-required"]}>
+              <li>
                 <NavLink to="/ajouter" className={({ isActive }) => isActive ? classes.active : ""}>
                   Ajouter
                 </NavLink>
               </li>
-              <li className={classes["auth-required"]}>
-                <button id="logout" onClick={handleLogout}>
+              <li>
+                <button className={classes.navlink} id="logout" onClick={handleLogout}>
                   Déconnexion
                 </button>
               </li>
             </>
           ) : (
             <>
-              <li className={classes["guest-only"]}>
+              <li>
                 <NavLink to="connexion" className={({ isActive }) => isActive ? classes.active : ""}>
                   Connexion
                 </NavLink>
               </li>
-              <li className={classes["guest-only"]}>
+              <li>
                 <NavLink to="/inscription" className={({ isActive }) => isActive ? classes.active : ""}>
                   Inscription
                 </NavLink>

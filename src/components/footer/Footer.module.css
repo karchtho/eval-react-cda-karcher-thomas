@@ -1,3 +1,8 @@
-.container {
-  /* Styles pour Footer */
+/* Footer */
+footer {
+  background-color: #34495e;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: auto;
 }

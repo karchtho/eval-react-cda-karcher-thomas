@@ -15,13 +15,15 @@ function App() {
     <AuthProvider>
       <FilmsProvider>
         <Navbar />
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/films' element={<Films/>} />
-          <Route path='/connexion' element={<Login />} />
-          <Route path='/inscription' element={<Register />} />
-          <Route path='/ajouter' element={<AddMovie />} />
-        </Routes>
+        <main>
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/films' element={<Films />} />
+            <Route path='/connexion' element={<Login />} />
+            <Route path='/inscription' element={<Register />} />
+            <Route path='/ajouter' element={<AddMovie />} />
+          </Routes>
+        </main>
         <Footer />
       </FilmsProvider>
     </AuthProvider>
