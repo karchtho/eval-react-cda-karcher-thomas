@@ -19,7 +19,6 @@ function FilmsGrid({ movies, onSelectMovie }) {
             movie={movie}
             onSelect={onSelectMovie}
           />
-
         )
       })}
     </div>
